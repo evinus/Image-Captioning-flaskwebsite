@@ -8,15 +8,13 @@
         <h1>Video with descrption and Knowledge Graph</h1>
         <img src="{{ url_for('video_feed') }}" alt="video" width="40%">
         <img src="{{url_for('static', filename='langmodel.png')}}" alt="User Image" width="40%">
-        <h1>Flask-Sock Demo</h1>
+        <h1>Captions</h1>
     </div>
+    <button type="button" onclick="ClearFunction">Clear</button>
     <div id="log"></div>
     <br>
-    <!-- <form id="form">
-      <label for="text">Input: </label>
-      <input type="text" id="text" autofocus>
-    </form> -->
     <script>
+
       const log = (text, color) => {
         document.getElementById('log').innerHTML += `<span style="color: ${color}">${text}</span><br>`;
       };
@@ -32,6 +30,10 @@
         }
         counter = counter + 1;
       });
+            function ClearFunction(){
+        var elem = document.getElementById('log');
+        elem.innerHTML ="";
+      }
       /* document.getElementById('form').onsubmit = ev => {
         ev.preventDefault();
         const textField = document.getElementById('text');
