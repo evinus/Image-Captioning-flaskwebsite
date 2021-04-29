@@ -25,19 +25,19 @@
       socket.addEventListener('message', ev => {
         log('<<< ' + ev.data, 'blue');
       });
-      document.getElementById('form').onsubmit = ev => {
+      /* document.getElementById('form').onsubmit = ev => {
         ev.preventDefault();
         const textField = document.getElementById('text');
         log('>>> ' + textField.value, 'red');
         socket.send(textField.value);
         textField.value = '';
-      };
+      }; */
     </script>
-        <div>
+        <!--<div>
             {% for data in data %}
             <p>{{ data }}</p>
             {% endfor %}
-        </div>
+        </div>-->
     </div>
 </body>
 </html>
