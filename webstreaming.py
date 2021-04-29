@@ -27,7 +27,6 @@ outputCaption = ""
 # initialize a flask object
 app = Flask(__name__)
 sock = Sock(app)
-
 # initialize the video stream and allow the camera sensor to
 # warmup
 #vs = VideoStream(usePiCamera=1).start()
@@ -146,6 +145,8 @@ def captioning(framecount):
 			outputFrame = picture.copy()
 			outputCaption = caption
 
+			
+
 
 def generate():
 	# grab global references to the output frame and lock variables
@@ -184,6 +185,8 @@ def echo(sock):
 	while True:
 		with lock:
 			sock.send(outputCaption)
+		time.sleep(1)
+
 	
 
 # check to see if this is the main thread of execution
